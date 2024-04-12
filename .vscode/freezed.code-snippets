@@ -1,0 +1,28 @@
+{
+    "freezed": {
+        "scope": "dart",
+        "description": "freezed class",
+        "prefix": [
+            "freezed",
+            "struct",
+        ],
+        "body": [
+            "@freezed",
+            "class ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}} with _$${1} {",
+            "  const factory ${1}({",
+            "    required ${2:String id},",
+            "  }) = _${1};",
+            "}",
+        ],
+    },
+    "part of freezed": {
+        "scope": "dart",
+        "description": "part of **.freezed.dart",
+        "prefix": [
+            "part_freezed",
+        ],
+        "body": [
+            "part \"gen/$TM_FILENAME_BASE.freezed.dart\";",
+        ],
+    },
+}

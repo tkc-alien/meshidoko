@@ -1,0 +1,12 @@
+{
+    "part of gen": {
+        "scope": "dart",
+        "description": "part of **.g.dart",
+        "prefix": [
+            "part_gen",
+        ],
+        "body": [
+            "part \"gen/$TM_FILENAME_BASE.g.dart\";",
+        ],
+    },
+}
