@@ -2,10 +2,10 @@
     "language": "en,ja",
     "ignorePaths": [
         "pubspec.lock",
+        "dart_defines/**",
         ".vscode/**",
         ".fvm/**",
         ".metadata",
-        ".env.**",
         "*.g.dart",
         "*.freezed.dart"
     ],
