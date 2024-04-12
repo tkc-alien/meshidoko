@@ -1,0 +1,18 @@
+{
+    "language": "en,ja",
+    "ignorePaths": [
+        "pubspec.lock",
+        ".vscode/**",
+        ".fvm/**",
+        ".metadata",
+        ".env.**",
+        "*.g.dart",
+        "*.freezed.dart"
+    ],
+    "words": [
+        "meshidoko",
+        "pubspec",
+        "cupertino",
+        "riverpod"
+    ]
+}
