@@ -49,5 +49,7 @@
 	<string>$(googleMapsApiKeyForIOS)</string>
 	<key>FLTEnableImpeller</key>
 	<false/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>マップ表示のために位置情報へアクセスします。</string>
 </dict>
 </plist>
