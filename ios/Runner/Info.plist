@@ -45,7 +45,9 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>GoogleMapsApiKey</key>
+	<string>$(googleMapsApiKeyForIOS)</string>
 	<key>FLTEnableImpeller</key>
-	<false />
+	<false/>
 </dict>
 </plist>
