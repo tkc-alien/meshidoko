@@ -10,6 +10,7 @@
         "*.freezed.dart"
     ],
     "words": [
+        "ARGB",
         "cupertino",
         "geolocator",
         "meshidoko",
