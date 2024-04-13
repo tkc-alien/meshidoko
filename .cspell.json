@@ -10,9 +10,10 @@
         "*.freezed.dart"
     ],
     "words": [
+        "cupertino",
         "meshidoko",
         "pubspec",
-        "cupertino",
-        "riverpod"
+        "riverpod",
+        "xcconfig"
     ]
 }
