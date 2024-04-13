@@ -111,6 +111,7 @@ class AppMapView extends ConsumerWidget {
     required this.initialLocation,
     this.markers,
     this.circles,
+    this.onTap,
   });
 
   /// マップ操作用コントローラ
@@ -124,6 +125,9 @@ class AppMapView extends ConsumerWidget {
 
   /// マップ上に表示するサークルのリスト
   final List<AppMapViewCircle>? circles;
+
+  /// タップ時のアクション
+  final void Function(LocationEntity location)? onTap;
 
   /// 初期表示位置をライブラリクラスへ変換
   CameraPosition get _initialCameraPosition {
@@ -146,6 +150,12 @@ class AppMapView extends ConsumerWidget {
       onMapCreated: controller?._internal.complete,
       markers: markers?.map((e) => e._convert()).toSet() ?? {},
       circles: circles?.map((e) => e._convert()).toSet() ?? {},
+      onTap: (pos) => onTap?.call(
+        LocationEntity(
+          lat: pos.latitude,
+          lng: pos.longitude,
+        ),
+      ),
     );
   }
 }
