@@ -1,28 +1,28 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of '../initial_location_provider.dart';
+part of '../current_condition_provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$initialLocationHash() => r'9aacd5cb1a85a4c3f63024e2656803d13794be2e';
+String _$currentConditionHash() => r'64fff6bb2f8a448d64c8643e98c4f1db894fda02';
 
-/// マップの初期表示位置を取得するプロバイダ
+/// 指定中の条件を管理するプロバイダ
 ///
-/// Copied from [initialLocation].
-@ProviderFor(initialLocation)
-final initialLocationProvider =
-    AutoDisposeFutureProvider<LocationEntity>.internal(
-  initialLocation,
-  name: r'initialLocationProvider',
+/// Copied from [CurrentCondition].
+@ProviderFor(CurrentCondition)
+final currentConditionProvider =
+    AutoDisposeNotifierProvider<CurrentCondition, ConditionEntity>.internal(
+  CurrentCondition.new,
+  name: r'currentConditionProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$initialLocationHash,
+      : _$currentConditionHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef InitialLocationRef = AutoDisposeFutureProviderRef<LocationEntity>;
+typedef _$CurrentCondition = AutoDisposeNotifier<ConditionEntity>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

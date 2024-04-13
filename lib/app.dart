@@ -13,6 +13,10 @@ class App extends ConsumerWidget {
     return MaterialApp.router(
       routerConfig: _routerConfig,
       title: "メシドコ",
+      theme: ThemeData(
+        useMaterial3: true,
+        colorSchemeSeed: Colors.orange,
+      ),
     );
   }
 }
