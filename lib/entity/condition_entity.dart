@@ -12,7 +12,7 @@ class ConditionEntity with _$ConditionEntity {
     required int distance,
 
     /// 価格帯条件
-    required PriceConditionType? price,
+    required Set<PriceConditionType> price,
 
     /// アルコール提供条件
     required AlcoholConditionType? alcohol,

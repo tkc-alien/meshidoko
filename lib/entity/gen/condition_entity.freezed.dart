@@ -20,7 +20,7 @@ mixin _$ConditionEntity {
   int get distance => throw _privateConstructorUsedError;
 
   /// 価格帯条件
-  PriceConditionType? get price => throw _privateConstructorUsedError;
+  Set<PriceConditionType> get price => throw _privateConstructorUsedError;
 
   /// アルコール提供条件
   AlcoholConditionType? get alcohol => throw _privateConstructorUsedError;
@@ -37,7 +37,9 @@ abstract class $ConditionEntityCopyWith<$Res> {
       _$ConditionEntityCopyWithImpl<$Res, ConditionEntity>;
   @useResult
   $Res call(
-      {int distance, PriceConditionType? price, AlcoholConditionType? alcohol});
+      {int distance,
+      Set<PriceConditionType> price,
+      AlcoholConditionType? alcohol});
 }
 
 /// @nodoc
@@ -54,7 +56,7 @@ class _$ConditionEntityCopyWithImpl<$Res, $Val extends ConditionEntity>
   @override
   $Res call({
     Object? distance = null,
-    Object? price = freezed,
+    Object? price = null,
     Object? alcohol = freezed,
   }) {
     return _then(_value.copyWith(
@@ -62,10 +64,10 @@ class _$ConditionEntityCopyWithImpl<$Res, $Val extends ConditionEntity>
           ? _value.distance
           : distance // ignore: cast_nullable_to_non_nullable
               as int,
-      price: freezed == price
+      price: null == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as PriceConditionType?,
+              as Set<PriceConditionType>,
       alcohol: freezed == alcohol
           ? _value.alcohol
           : alcohol // ignore: cast_nullable_to_non_nullable
@@ -83,7 +85,9 @@ abstract class _$$ConditionEntityImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int distance, PriceConditionType? price, AlcoholConditionType? alcohol});
+      {int distance,
+      Set<PriceConditionType> price,
+      AlcoholConditionType? alcohol});
 }
 
 /// @nodoc
@@ -98,7 +102,7 @@ class __$$ConditionEntityImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? distance = null,
-    Object? price = freezed,
+    Object? price = null,
     Object? alcohol = freezed,
   }) {
     return _then(_$ConditionEntityImpl(
@@ -106,10 +110,10 @@ class __$$ConditionEntityImplCopyWithImpl<$Res>
           ? _value.distance
           : distance // ignore: cast_nullable_to_non_nullable
               as int,
-      price: freezed == price
-          ? _value.price
+      price: null == price
+          ? _value._price
           : price // ignore: cast_nullable_to_non_nullable
-              as PriceConditionType?,
+              as Set<PriceConditionType>,
       alcohol: freezed == alcohol
           ? _value.alcohol
           : alcohol // ignore: cast_nullable_to_non_nullable
@@ -122,15 +126,25 @@ class __$$ConditionEntityImplCopyWithImpl<$Res>
 
 class _$ConditionEntityImpl implements _ConditionEntity {
   const _$ConditionEntityImpl(
-      {required this.distance, required this.price, required this.alcohol});
+      {required this.distance,
+      required final Set<PriceConditionType> price,
+      required this.alcohol})
+      : _price = price;
 
   /// 距離条件
   @override
   final int distance;
 
   /// 価格帯条件
+  final Set<PriceConditionType> _price;
+
+  /// 価格帯条件
   @override
-  final PriceConditionType? price;
+  Set<PriceConditionType> get price {
+    if (_price is EqualUnmodifiableSetView) return _price;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableSetView(_price);
+  }
 
   /// アルコール提供条件
   @override
@@ -148,12 +162,13 @@ class _$ConditionEntityImpl implements _ConditionEntity {
             other is _$ConditionEntityImpl &&
             (identical(other.distance, distance) ||
                 other.distance == distance) &&
-            (identical(other.price, price) || other.price == price) &&
+            const DeepCollectionEquality().equals(other._price, _price) &&
             (identical(other.alcohol, alcohol) || other.alcohol == alcohol));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, distance, price, alcohol);
+  int get hashCode => Object.hash(runtimeType, distance,
+      const DeepCollectionEquality().hash(_price), alcohol);
 
   @JsonKey(ignore: true)
   @override
@@ -166,7 +181,7 @@ class _$ConditionEntityImpl implements _ConditionEntity {
 abstract class _ConditionEntity implements ConditionEntity {
   const factory _ConditionEntity(
       {required final int distance,
-      required final PriceConditionType? price,
+      required final Set<PriceConditionType> price,
       required final AlcoholConditionType? alcohol}) = _$ConditionEntityImpl;
 
   @override
@@ -176,7 +191,7 @@ abstract class _ConditionEntity implements ConditionEntity {
   @override
 
   /// 価格帯条件
-  PriceConditionType? get price;
+  Set<PriceConditionType> get price;
   @override
 
   /// アルコール提供条件

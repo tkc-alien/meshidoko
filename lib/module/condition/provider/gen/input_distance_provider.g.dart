@@ -1,28 +1,28 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of '../current_condition_provider.dart';
+part of '../input_distance_provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$currentConditionHash() => r'7c49e88770a71a508cfe45210dedfd222a7fa24b';
+String _$inputDistanceHash() => r'91fb4cfa526edfdd56b4b1a4ea06c5bf1359d6a3';
 
-/// 指定中の条件を管理するプロバイダ
+/// 距離条件の入力値のプロバイダ
 ///
-/// Copied from [CurrentCondition].
-@ProviderFor(CurrentCondition)
-final currentConditionProvider =
-    AutoDisposeNotifierProvider<CurrentCondition, ConditionEntity>.internal(
-  CurrentCondition.new,
-  name: r'currentConditionProvider',
+/// Copied from [InputDistance].
+@ProviderFor(InputDistance)
+final inputDistanceProvider =
+    AutoDisposeNotifierProvider<InputDistance, double>.internal(
+  InputDistance.new,
+  name: r'inputDistanceProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$currentConditionHash,
+      : _$inputDistanceHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$CurrentCondition = AutoDisposeNotifier<ConditionEntity>;
+typedef _$InputDistance = AutoDisposeNotifier<double>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

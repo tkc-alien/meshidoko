@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
 import 'package:meshidoko/provider/current_condition_provider.dart';
+import 'package:meshidoko/route/routes.dart';
 
 /// ホーム画面：条件表示コンポーネント
 class HomeConditionView extends ConsumerWidget {
@@ -40,7 +41,9 @@ class HomeConditionView extends ConsumerWidget {
           _buildConditionIcon(
             context,
             isActive: ref.watch(
-              currentConditionProvider.select((value) => value.price != null),
+              currentConditionProvider.select(
+                (value) => value.price.isNotEmpty,
+              ),
             ),
             activeIcon: Icons.monetization_on_outlined,
             inactiveIcon: Icons.monetization_on_outlined,
@@ -88,6 +91,7 @@ class HomeConditionView extends ConsumerWidget {
 
   /// ボタンタップ時のアクション
   void onPressedOpen(BuildContext context, WidgetRef ref) {
-    // TODO implement 条件変更モーダルを表示する
+    // 条件変更モーダルを表示する
+    const ConditionRoute().push(context);
   }
 }
