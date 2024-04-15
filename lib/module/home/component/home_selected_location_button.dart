@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:meshidoko/module/home/provider/map_view_controller_provider.dart';
-import 'package:meshidoko/provider/selected_location_provider.dart';
+import 'package:meshidoko/module/home/provider/selected_location_provider.dart';
 
 /// ホーム画面：選択地点ボタン
 class HomeSelectedLocationButton extends ConsumerWidget {

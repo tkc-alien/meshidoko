@@ -4,7 +4,7 @@ import 'package:meshidoko/entity/location_entity.dart';
 import 'package:meshidoko/module/home/provider/initial_location_provider.dart';
 import 'package:meshidoko/module/home/provider/map_view_controller_provider.dart';
 import 'package:meshidoko/provider/current_condition_provider.dart';
-import 'package:meshidoko/provider/selected_location_provider.dart';
+import 'package:meshidoko/module/home/provider/selected_location_provider.dart';
 import 'package:meshidoko/view/component/app_map_view.dart';
 
 /// ホーム画面：マップビュー
