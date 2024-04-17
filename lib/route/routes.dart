@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:meshidoko/module/condition/condition_modal.dart';
 import 'package:meshidoko/module/home/home_screen.dart';
+import 'package:meshidoko/module/restaurant/restaurant_screen.dart';
 import 'package:meshidoko/route/bottom_sheet_page.dart';
 
 part "gen/routes.g.dart";
@@ -9,7 +10,10 @@ part "gen/routes.g.dart";
 /// ホーム画面
 @TypedGoRoute<HomeRoute>(
   path: "/",
-  routes: [TypedGoRoute<ConditionRoute>(path: "condition")],
+  routes: [
+    TypedGoRoute<ConditionRoute>(path: "condition"),
+    TypedGoRoute<RestaurantRoute>(path: "restaurant"),
+  ],
 )
 class HomeRoute extends GoRouteData {
   const HomeRoute();
@@ -27,6 +31,19 @@ class ConditionRoute extends GoRouteData {
     return BottomSheetPage(
       builder: (context) => const ConditionModal(),
       maxHeight: MediaQuery.of(context).size.height * 0.7,
+    );
+  }
+}
+
+/// レストラン画面
+class RestaurantRoute extends GoRouteData {
+  const RestaurantRoute();
+
+  @override
+  Page<void> buildPage(BuildContext context, GoRouterState state) {
+    return const MaterialPage(
+      fullscreenDialog: true,
+      child: RestaurantScreen(),
     );
   }
 }

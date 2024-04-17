@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:meshidoko/route/routes.dart';
 
 /// ホーム画面：決定ボタン
 class HomeDecideButton extends ConsumerWidget {
@@ -29,6 +30,7 @@ class HomeDecideButton extends ConsumerWidget {
 
   /// ボタンタップ時のアクション
   void onPressed(BuildContext context, WidgetRef ref) {
-    // TODO implement
+    // レストラン画面に遷移する
+    const RestaurantRoute().go(context);
   }
 }
