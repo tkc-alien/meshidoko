@@ -22,6 +22,16 @@ if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
 
+def dartDefines = [:];
+if (project.hasProperty('dart-defines')) {
+    dartDefines = dartDefines + project.property('dart-defines')
+        .split(',')
+        .collectEntries { entry ->
+            def pair = new String(entry.decodeBase64(), 'UTF-8').split('=')
+            [(pair.first()): pair.last()]
+        }
+}
+
 android {
     namespace "com.example.meshidoko"
     compileSdk flutter.compileSdkVersion
@@ -49,6 +59,8 @@ android {
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+
+        manifestPlaceholders["googleMapsApiKey"] = dartDefines.googleMapsApiKeyForAndroid
     }
 
     buildTypes {
@@ -56,8 +68,6 @@ android {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig signingConfigs.debug
-
-            manifestPlaceholders["googleMapsApiKey"] = googleMapsApiKeyForAndroid
         }
     }
 }
