@@ -38,9 +38,12 @@ class RestaurantScreen extends ConsumerWidget {
 
                   const Gap(20),
 
-                  const Align(
+                  // 地図ボタン
+                  Align(
                     alignment: Alignment.center,
-                    child: RestaurantOpenMapButton(),
+                    child: RestaurantOpenMapButton(
+                      mapUrl: restaurant.mapUrl,
+                    ),
                   ),
 
                   const Gap(20),
