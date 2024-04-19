@@ -10,6 +10,9 @@ class RestaurantEntity with _$RestaurantEntity {
     /// ID
     required String id,
 
+    /// 地図URL
+    required String mapUrl,
+
     /// 店名
     required String name,
 

@@ -10,6 +10,7 @@ _$RestaurantEntityImpl _$$RestaurantEntityImplFromJson(
         Map<String, dynamic> json) =>
     _$RestaurantEntityImpl(
       id: json['id'] as String,
+      mapUrl: json['mapUrl'] as String,
       name: json['name'] as String,
       imageUrl: json['imageUrl'] as String?,
       latitude: (json['latitude'] as num).toDouble(),
@@ -23,6 +24,7 @@ Map<String, dynamic> _$$RestaurantEntityImplToJson(
         _$RestaurantEntityImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
+      'mapUrl': instance.mapUrl,
       'name': instance.name,
       'imageUrl': instance.imageUrl,
       'latitude': instance.latitude,

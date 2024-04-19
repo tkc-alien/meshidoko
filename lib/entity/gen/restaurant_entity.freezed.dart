@@ -23,6 +23,9 @@ mixin _$RestaurantEntity {
   /// ID
   String get id => throw _privateConstructorUsedError;
 
+  /// 地図URL
+  String get mapUrl => throw _privateConstructorUsedError;
+
   /// 店名
   String get name => throw _privateConstructorUsedError;
 
@@ -58,6 +61,7 @@ abstract class $RestaurantEntityCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
+      String mapUrl,
       String name,
       String? imageUrl,
       double latitude,
@@ -81,6 +85,7 @@ class _$RestaurantEntityCopyWithImpl<$Res, $Val extends RestaurantEntity>
   @override
   $Res call({
     Object? id = null,
+    Object? mapUrl = null,
     Object? name = null,
     Object? imageUrl = freezed,
     Object? latitude = null,
@@ -93,6 +98,10 @@ class _$RestaurantEntityCopyWithImpl<$Res, $Val extends RestaurantEntity>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      mapUrl: null == mapUrl
+          ? _value.mapUrl
+          : mapUrl // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
           ? _value.name
@@ -136,6 +145,7 @@ abstract class _$$RestaurantEntityImplCopyWith<$Res>
   @useResult
   $Res call(
       {String id,
+      String mapUrl,
       String name,
       String? imageUrl,
       double latitude,
@@ -157,6 +167,7 @@ class __$$RestaurantEntityImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
+    Object? mapUrl = null,
     Object? name = null,
     Object? imageUrl = freezed,
     Object? latitude = null,
@@ -169,6 +180,10 @@ class __$$RestaurantEntityImplCopyWithImpl<$Res>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      mapUrl: null == mapUrl
+          ? _value.mapUrl
+          : mapUrl // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
           ? _value.name
@@ -207,6 +222,7 @@ class __$$RestaurantEntityImplCopyWithImpl<$Res>
 class _$RestaurantEntityImpl implements _RestaurantEntity {
   const _$RestaurantEntityImpl(
       {required this.id,
+      required this.mapUrl,
       required this.name,
       required this.imageUrl,
       required this.latitude,
@@ -221,6 +237,10 @@ class _$RestaurantEntityImpl implements _RestaurantEntity {
   /// ID
   @override
   final String id;
+
+  /// 地図URL
+  @override
+  final String mapUrl;
 
   /// 店名
   @override
@@ -252,7 +272,7 @@ class _$RestaurantEntityImpl implements _RestaurantEntity {
 
   @override
   String toString() {
-    return 'RestaurantEntity(id: $id, name: $name, imageUrl: $imageUrl, latitude: $latitude, longitude: $longitude, distance: $distance, priceMin: $priceMin, priceMax: $priceMax)';
+    return 'RestaurantEntity(id: $id, mapUrl: $mapUrl, name: $name, imageUrl: $imageUrl, latitude: $latitude, longitude: $longitude, distance: $distance, priceMin: $priceMin, priceMax: $priceMax)';
   }
 
   @override
@@ -261,6 +281,7 @@ class _$RestaurantEntityImpl implements _RestaurantEntity {
         (other.runtimeType == runtimeType &&
             other is _$RestaurantEntityImpl &&
             (identical(other.id, id) || other.id == id) &&
+            (identical(other.mapUrl, mapUrl) || other.mapUrl == mapUrl) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.imageUrl, imageUrl) ||
                 other.imageUrl == imageUrl) &&
@@ -278,8 +299,8 @@ class _$RestaurantEntityImpl implements _RestaurantEntity {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, imageUrl, latitude,
-      longitude, distance, priceMin, priceMax);
+  int get hashCode => Object.hash(runtimeType, id, mapUrl, name, imageUrl,
+      latitude, longitude, distance, priceMin, priceMax);
 
   @JsonKey(ignore: true)
   @override
@@ -299,6 +320,7 @@ class _$RestaurantEntityImpl implements _RestaurantEntity {
 abstract class _RestaurantEntity implements RestaurantEntity {
   const factory _RestaurantEntity(
       {required final String id,
+      required final String mapUrl,
       required final String name,
       required final String? imageUrl,
       required final double latitude,
@@ -314,6 +336,10 @@ abstract class _RestaurantEntity implements RestaurantEntity {
 
   /// ID
   String get id;
+  @override
+
+  /// 地図URL
+  String get mapUrl;
   @override
 
   /// 店名
